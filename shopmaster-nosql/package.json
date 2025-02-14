@@ -1,0 +1,17 @@
+{
+    "name": "shopmaster-nosql",
+    "version": "1.0.0",
+    "description": "NoSQL Midterm Project - E-Commerce System",
+    "main": "src/app.js",
+    "scripts": {
+      "seed": "node src/seed/seedData.js",
+      "start": "node src/app.js"
+    },
+    "keywords": [],
+    "author": "Tleukhan",
+    "license": "ISC",
+    "dependencies": {
+        "faker": "^5.5.3",
+        "mongodb": "^5.5.0"
+      }
+  }

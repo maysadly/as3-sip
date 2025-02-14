@@ -1,0 +1,19 @@
+{
+  "name": "as2_web(2)",
+  "version": "1.0.0",
+  "description": "## Installation 1. Clone the repository. 2. Run `npm install` to install dependencies. 3. Create a `.env` file with your Spotify credentials: SPOTIFY_CLIENT_ID=your_client_id SPOTIFY_CLIENT_SECRET=your_client_secret 4. Start the server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "spotify-web-api-node": "^5.0.2"
+  }
+}

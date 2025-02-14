@@ -1,0 +1,11 @@
+`<%- include('layout', { title: 'Error' }) %>
+
+<div class="error-container">
+    <h1>Oops! Something went wrong</h1>
+    <% if (error.status) { %>
+        <h2><%= error.status %> - <%= error.message %></h2>
+    <% } else { %>
+        <h2>An unexpected error occurred</h2>
+    <% } %>
+    <a href="/" class="btn btn-primary">Return to Home</a>
+</div>`

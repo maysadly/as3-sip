@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #1db954;
+    color: white;
+    text-align: center;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  form {
+    margin-bottom: 20px;
+  }
+  input, button {
+    padding: 10px;
+    margin: 5px;
+  }
+  .track {
+    border: 1px solid #fff;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    background: white;
+    color: black;
+  }
+  .track img {
+    width: 100px;
+    float: left;
+    margin-right: 10px;
+  }
+  

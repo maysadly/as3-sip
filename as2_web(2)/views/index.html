@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Song Finder</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Spotify Song Finder</h1>
+    <form id="searchForm">
+      <input type="text" name="query" placeholder="Enter a song or artist" required>
+      <button type="submit">Search</button>
+    </form>
+    <div id="results"></div>
+  </div>
+  <script>
+    const form = document.getElementById('searchForm');
+    const resultsDiv = document.getElementById('results');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const query = form.query.value;
+      const res = await fetch('/search', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `query=${query}`
+      });
+      const results = await res.json();
+      resultsDiv.innerHTML = results.map((track) => `
+        <div class="track">
+          <img src="${track.image}" alt="${track.name}">
+          <h3>${track.name}</h3>
+          <p><strong>Artist(s):</strong> ${track.artists}</p>
+          <p><strong>Album:</strong> ${track.album}</p>
+          <p><strong>Release Date:</strong> ${track.releaseDate}</p>
+          <p><strong>Duration:</strong> ${Math.floor(track.duration / 60000)}:${Math.floor((track.duration % 60000) / 1000)}</p>
+          <a href="${track.link}" target="_blank">Listen on Spotify</a>
+        </div>
+      `).join('');
+    });
+  </script>
+</body>
+</html>
